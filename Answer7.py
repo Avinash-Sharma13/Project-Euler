@@ -1,27 +1,34 @@
-"""maxbound = int(input())
-prime = []
+from math import sqrt, floor
+import time
 
-for num in range(2,maxbound+1):
-    for i in range(2,num):
-        if num % i == 0 or len(prime) == 10001:
-            break
+
+def prime(n):
+    if n == 1:
+            return False  # 1 is not a prime Number
+    elif n == 2:
+        return True
+    elif n > 2 and n % 2 == 0:
+        return False
     else:
-        #print(f"Appended {num}")
-        prime.append(num)
-#print(prime)
-print(len(prime))
-"""
+        maxdivisor = floor(sqrt(n)) + 1
+        for divisor in range(3, maxdivisor, 2):
+            if n % divisor == 0:
+                return False
+        return True
 
 
-def primes_sieve1(limit):
-    limitn = limit+1
-    primes = dict()
-    for i in range(2, limitn): primes[i] = True
+t0 = time.time()
+n = 1
+i = 0
+primeatpos = 10001
+while True:
+    if prime(n):
+        i += 1
+        # print(n, prime(n))
+    if i == primeatpos:
+        print(n)
+        break
+    n += 1
+t1 = time.time()
 
-    for i in primes:
-        factors = range(i,limitn, i)
-        for f in factors[1:]:
-            primes[f] = False
-    return [i for i in primes if primes[i]==True]
-
-print(primes_sieve1(2000000))
+# print(f"Time Taken : {t1 - t0}")
