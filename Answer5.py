@@ -10,7 +10,6 @@ What is the smallest positive number that is evenly divisible by all of the numb
             the gap between checking stage is the multiplication of all the prime numbers between given range,
             because if a number is to be divided by all the numbers that are between the given range,
             it must be multiplied with it's prime numbers in that range.
-
 """
 
 
