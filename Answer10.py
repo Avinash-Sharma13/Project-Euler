@@ -7,7 +7,7 @@ def prime(n):
             return False  # 1 is not a prime Number
     elif n == 2:
         return True
-    elif n > 2 and n % 2 == 0:
+    elif n > 2 and n % 2 == 0:  # Even Numbers except 2 are not prime
         return False
     else:
         maxdivisor = floor(sqrt(n)) + 1
@@ -23,7 +23,7 @@ maxnum = 2000000
 for i in range(1, maxnum+1):
     if prime(i):
         sum = sum +i
-        #print(i)
+        # print(i)
 print(sum)
 
 t1 = time.time()
