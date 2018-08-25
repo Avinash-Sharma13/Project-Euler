@@ -105,7 +105,7 @@ for i in range(0,len(data),50):
     sumOfNumbers = sumOfNumbers + number
 sumOfNumbers = str(sumOfNumbers)
 firstTenDigits = sumOfNumbers[0:10]
-print(firstTenDigits)
+print(firstTenDigits) 
 
 
 
