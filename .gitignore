@@ -2,3 +2,5 @@
 .idea/modules.xml
 .idea/misc.xml
 .idea/Project-Euler.iml
+*.xml
+*.xml
