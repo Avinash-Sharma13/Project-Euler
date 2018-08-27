@@ -1,19 +1,27 @@
-num = []
-nextpos = 0
-triNum = []
-i = 0
+from math import ceil, sqrt
+import time
+t0 = time.time()
+
+def divisors(n):
+    numberOfFactors = 0
+    for i in range(1, int(ceil(sqrt(n)))+1):
+        if n % i == 0:
+            numberOfFactors +=2
+        if i*i==n:
+            numberOfFactors -=1
+    return numberOfFactors
+# triNum = []
+n = 1
+nextpos = 1
 while True:
-    i += 1
-    num.append(i)
-    nextpos += i
-    triNum.append(nextpos)
-    divisor = []
-    for number in triNum:
-        if number % i == 0:
-            divisor.append(number)
-    print(divisor)
-    if len(triNum) == 10:
+    n += 1
+    nextpos += n
+    # triNum.append(nextpos)
+    triNum = nextpos
+    cnt=divisors(nextpos)
+    if cnt >= 500:
+        print(triNum)
         break
+t1 = time.time()
 
-print(triNum, ":", divisor)
-
+print("Time Take : ", t1-t0, "Seconds")
