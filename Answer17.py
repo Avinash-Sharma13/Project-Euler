@@ -34,4 +34,4 @@ for num in initDict1.values():
     wordCount += len(num)
 print(wordCount)
 
-
+#
